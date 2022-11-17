@@ -1,4 +1,6 @@
 import '../styles/root.css'
+import '../styles/fonts.css'
+import '../styles/normalize.css'
 import '../styles/globals.css'
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 
