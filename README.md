@@ -1,6 +1,12 @@
 # creditplus
-creditplus-job-listings
+Frontend Challenge - Creditplus job listings
 
+## Description
+Use Next.js to create an overview of all jobs, including a type of pagination (load more button or typical approach you can see find in the layout) and 3 filters: department, city and experience level. The page should be statically pre-rendered, doesn’t need to be production ready though: all jobs can be passed from the server to the client at once, no lazy fetching for the jobs necessary - pagination can be handled client-side completely. Preferably use styled components for styling.
+
+To get all jobs follow the contentful api docs: [content-delivery-api](https://www.contentful.com/developers/docs/references/content-delivery-api/) 
+
+## Create Next App
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
