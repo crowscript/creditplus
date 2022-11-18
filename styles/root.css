@@ -42,9 +42,9 @@
     /* Font/text values */
     --font-family-gotham: Gotham;
     --font-style-normal: normal;
-    --font-weight-normal: normal;
-    --font-weight-medium: medium;
-    --font-weight-bold: bold;
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-bold: 600;
     --font-size-12: 12px;
     --font-size-14: 14px;
     --font-size-16: 16px;

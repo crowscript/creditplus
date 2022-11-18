@@ -1,7 +1,8 @@
-import styles from '../styles/Home.module.css'
+import styles from '../styles/Home.module.css';
+
 const Navbar = () => {
     return (
-      <nav className={styles.navbar}>
+      <nav className={styles.mainNavbar}>
         <h1 className={styles.logo}>CreditPlus</h1>
       </nav>
     );

@@ -1,7 +1,7 @@
-import '../styles/root.css'
-import '../styles/fonts.css'
-import '../styles/normalize.css'
-import '../styles/globals.css'
+import '../styles/root.css';
+import '../styles/fonts.css';
+import '../styles/normalize.css';
+import '../styles/globals.css';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 const theme = createTheme({
@@ -12,8 +12,17 @@ const theme = createTheme({
       'Arial',
       'sans-serif'
     ].join(','),
-  }
+  },
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 374,
+      md: 767,
+      lg: 1439,
+    },
+  },
 });
+
 
 function MyApp({ Component, pageProps }) {
 

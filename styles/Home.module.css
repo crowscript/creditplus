@@ -1,17 +1,21 @@
 
 .main {
-  min-height: 100vh;
-  padding: 4rem 0;
-  flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+
 }
 
-.navbar {
+.mainHeader {
   background: var(--gray-75);
-  padding: 1rem;
+  padding: 1.75rem;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.headerCareer {
+  padding: 6.25rem 0 3.75rem 0;
+  background: var(--gray-75);
+  width: 100%;
 }
 
 .logo {
@@ -19,65 +23,34 @@
   margin-bottom: 0;
 }
 
-.footer {
+.mainFooter {
   display: flex;
   flex: 1;
-  padding: 2rem 0;
-  border-top: 1px solid #eaeaea;
   justify-content: center;
   align-items: center;
+  text-align: center;
+  padding: 1rem 0;
+  background-color: var(--gray-100-–-base-bg);
+  border-top: 1px solid var(--gray-200);
 }
 
-.footer a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1;
-}
-
-.title a {
-  color: #0070f3;
-  text-decoration: none;
-}
-
-.title a:hover,
-.title a:focus,
-.title a:active {
-  text-decoration: underline;
+.m-0 {
+  margin: 0;
 }
 
 .title {
-  margin: 0;
-  line-height: 1.15;
-  font-size: 4rem;
-}
-
-.title,
-.description {
+  font: var(--font-style-normal) normal var(--font-weight-bold) var(--font-size-30)/var(--line-spacing-36) var(--font-family-gotham);
+  color: var(--secondary);
+  color: var(--secondary);
   text-align: center;
 }
 
 .description {
-  margin: 4rem 0;
-  line-height: 1.5;
-  font-size: 1.5rem;
-}
-
-.code {
-  background: #fafafa;
-  border-radius: 5px;
-  padding: 0.75rem;
-  font-size: 1.1rem;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
-}
-
-.grid {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  max-width: 800px;
+  font: var(--font-style-normal) normal var(--font-weight-medium) var(--font-size-14)/var(--line-spacing-20) var(--font-family-gotham);
+  letter-spacing: var(--character-spacing--0-28);
+  color: var(--primary-600-base);
+  text-align: center;
+  margin-bottom: var(--line-spacing-18);
 }
 
 .card {
@@ -110,9 +83,30 @@
   line-height: 1.5;
 }
 
-@media (max-width: 600px) {
-  .grid {
-    width: 100%;
-    flex-direction: column;
+.justify-content-center {
+  display: flex;
+  justify-content: center;
+}
+
+#demo-simple-select-filled-label {
+  background: var(--gray-75);
+  padding: 0 5px;
+}
+
+@media only screen and (min-width: 768px) {
+
+  .title {
+    font: var(--font-style-normal) normal var(--font-weight-bold) var(--font-size-48)/68px var(--font-family-gotham);
+    letter-spacing: var(--character-spacing--1-44);
   }
+
+  .description {
+    font: var(--font-style-normal) normal var(--font-weight-medium) var(--font-size-16)/var(--line-spacing-24) var(--font-family-gotham);
+    letter-spacing: var(--character-spacing--0-32);
+
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+
 }
