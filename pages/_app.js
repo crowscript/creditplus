@@ -3,6 +3,7 @@ import '../styles/fonts.css';
 import '../styles/normalize.css';
 import '../styles/globals.css';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
+import Layout from '../components/Layout';
 
 const theme = createTheme({
   typography: {
@@ -28,7 +29,9 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <ThemeProvider theme={theme}>
-      <Component {...pageProps} />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </ThemeProvider>
   );
 }
