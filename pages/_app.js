@@ -12,18 +12,9 @@ const theme = createTheme({
       '"Helvetica Neue"',
       'Arial',
       'sans-serif'
-    ].join(','),
-  },
-  breakpoints: {
-    values: {
-      xs: 0,
-      sm: 374,
-      md: 767,
-      lg: 1439,
-    },
-  },
+    ].join(',')
+  }
 });
-
 
 function MyApp({ Component, pageProps }) {
 

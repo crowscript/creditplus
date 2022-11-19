@@ -1,21 +1,21 @@
-import styles from '../styles/Home.module.css';
+import styled from "styled-components";
 import Navbar from '../components/navbar';
-import Grid from '@mui/material/Grid';
-import Item from '@mui/material/Grid';
+import { Container } from '../components/styles/Global.styled';
+
+const HeaderStyled = styled.header`
+    background: var(--gray-75);
+    padding: 1.75rem;
+    border-bottom: 1px solid var(--gray-200);
+`;
+
 
 const Header = () => {
     return (
-        <header className={`${styles.mainHeader} ${styles["m-0"]}`} >
-            <Grid container columns={{ xs: 4, md: 6, lg: 12 }} maxWidth="lg" margin="auto">
-                <Grid item xs={12} md={3} lg={6}>
-                    <Item>
-                        <Navbar />
-                    </Item>
-                </Grid>
-                <Grid item xs={12} md={3} lg={6}>
-                </Grid>
-            </Grid>
-        </header>
+        <HeaderStyled>
+            <Container>
+                <Navbar />
+            </Container>
+        </HeaderStyled>
     );
   }
    

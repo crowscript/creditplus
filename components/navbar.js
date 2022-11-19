@@ -1,9 +1,16 @@
-import styles from '../styles/Home.module.css';
+import styled from "styled-components";
+
+const Logo = styled.h1`
+  color: var(--primary-600-base);
+  margin-bottom: 0;
+`;
 
 const Navbar = () => {
     return (
-      <nav className={styles.mainNavbar}>
-        <h1 className={styles.logo}>CreditPlus</h1>
+      <nav>
+        <Logo>
+          CreditPlus
+        </Logo>
       </nav>
     );
   }

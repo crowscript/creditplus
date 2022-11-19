@@ -1,15 +1,35 @@
-import styles from '../styles/Home.module.css';
-import Image from 'next/image';
+import styled from "styled-components";
+import { Container } from '../components/styles/Global.styled';
 
 const getCurrentYear = () => {
     return new Date().getFullYear();  
 };
 
+const FooterStyled = styled.footer`
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 4rem;
+    background-color: var(--gray-100-–-base-bg);
+    border-top: 1px solid var(--gray-200);
+`;
+
+const Paragraph = styled.p`
+  margin-bottom: 0;
+`;
+
 const Footer = () => {
     return (
-        <footer className={styles.mainFooter}>
-            <p>&copy; {getCurrentYear()} Creditplus Bank AG, Stuttgart</p>
-        </footer>
+        <FooterStyled>
+            <Container>
+                <Paragraph>
+                    &copy; {getCurrentYear()} Creditplus Bank AG, Stuttgart
+                </Paragraph>
+            </Container>
+        </FooterStyled>   
     );
   }
    
