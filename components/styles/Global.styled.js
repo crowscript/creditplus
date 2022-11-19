@@ -4,6 +4,13 @@ export const Container = styled.div`
     width: 100%;
     max-width: 1440px;
     margin: 0 auto;
+    padding: 0 1rem;
+`;
+
+export const ContainerNarrow = styled.div`
+    width: 100%;
+    max-width: 824px;
+    margin: 0 auto;
 `;
 
 export const DivFull = styled.div`
@@ -24,3 +31,8 @@ export const ScreenSize = {
     desktop: `(min-width: ${size.lg})`
 };
   
+export const ListUnstyled = styled.ul`
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+`;

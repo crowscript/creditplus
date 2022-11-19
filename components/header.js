@@ -4,7 +4,7 @@ import { Container } from '../components/styles/Global.styled';
 
 const HeaderStyled = styled.header`
     background: var(--gray-75);
-    padding: 1.75rem;
+    padding: 1.75rem 0;
     border-bottom: 1px solid var(--gray-200);
 `;
 

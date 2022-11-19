@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Card from '../components/card';
 import { createClient } from 'contentful'
-import { Container, DivFull, ScreenSize } from '../components/styles/Global.styled';
+import { Container, ContainerNarrow, DivFull, ScreenSize, ListUnstyled } from '../components/styles/Global.styled';
 
 export async function getStaticProps() {
 
@@ -64,21 +64,27 @@ export default function Home({jobs}) {
     <DivFull> 
       <HeaderCareer>
         <Container>
-          <ParagraphDesc>
-            {jobsLength} offene Stellen bei Creditplus 
-          </ParagraphDesc>
-   
-          <HeaderTitle>
-            Hier beginnt deine Zukunft
-          </HeaderTitle>
+          <ContainerNarrow>
+            <ParagraphDesc>
+              {jobsLength} offene Stellen bei Creditplus 
+            </ParagraphDesc>
+    
+            <HeaderTitle>
+              Hier beginnt deine Zukunft
+            </HeaderTitle>
+          </ContainerNarrow>
         </Container>
       </HeaderCareer>  
 
       <ResultsSection>
         <Container>
-          {jobs.map(job => (
-            <Card key={job.sys.id} job={job} />
-          ))}
+          <ContainerNarrow>
+            <ListUnstyled>
+              {jobs.map(job => (
+                  <Card key={job.sys.id} job={job} />
+              ))}
+            </ListUnstyled>
+          </ContainerNarrow>
         </Container>
       </ResultsSection>
     </DivFull>
