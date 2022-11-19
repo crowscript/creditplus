@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Card from '../components/card';
 import { createClient } from 'contentful'
-import { Container, DivFull } from '../components/styles/Global.styled';
+import { Container, DivFull, ScreenSize } from '../components/styles/Global.styled';
 
 export async function getStaticProps() {
 
@@ -26,7 +26,7 @@ const HeaderTitle = styled.h2`
   color: var(--secondary);
   text-align: center;
 
-  @media only screen and (min-width: 768px) {
+  @media ${ScreenSize.tablet} { 
     font: var(--font-style-normal) normal var(--font-weight-bold) var(--font-size-48)/68px var(--font-family-gotham);
     letter-spacing: var(--character-spacing--1-44);
   }
@@ -45,7 +45,7 @@ const ParagraphDesc = styled.p`
   text-align: center;
   margin-bottom: var(--line-spacing-18);
 
-  @media only screen and (min-width: 768px) {
+  @media ${ScreenSize.tablet} {
     font: var(--font-style-normal) normal var(--font-weight-medium) var(--font-size-16)/var(--line-spacing-24) var(--font-family-gotham);
     letter-spacing: var(--character-spacing--0-32);
   }  
