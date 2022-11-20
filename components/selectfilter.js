@@ -92,12 +92,26 @@ const customStyles = {
 const SelectFilter = ({jobs, handleSelected}) => {
 
   const [optionsType, setOptionsType] = useState([]);
+  const [optionsDepartment, setOptionsDepartment]= useState([]);
 
   useEffect(() => {
     const type = jobs.map(j => j.fields?.type);
+    const department = jobs.map(j => j.fields?.department);
+    // const department = jobs.map(j => {
+    //   if (j.fields.department) {
+    //     return j.fields.department.find(l => l.fields.title)
+    //   }
+    //   return
+    // });
+
+    // console.log(department);
     if (type) {
       const filteredType = Array.from(new Set(type.map(item => JSON.stringify({title: item.fields.title, value: item.fields.title})))).map(JSON.parse);
       setOptionsType(filteredType);
+    }
+    if (department) {
+      const filteredType = Array.from(new Set(department.map(item => JSON.stringify({title: item.fields.title, value: item.fields.title})))).map(JSON.parse);
+      setOptionsDepartment(filteredType);
     }
   },[]);
 
@@ -105,12 +119,12 @@ const SelectFilter = ({jobs, handleSelected}) => {
         <SelectSection>
             <Select 
             // menuIsOpen={true}
-            getOptionLabel={option => option?.title} 
-            options={optionsType} 
+            getOptionLabel={option => option.title} 
+            options={optionsDepartment} 
             instanceId="Bereich" 
             placeholder="Bereich"
             components={{ IndicatorSeparator: () => null }}
-            onChange={(val) => handleSelected({title: val?.title, type: 'type'})}
+            onChange={(val) => handleSelected({title: val?.title, department: 'department'})}
             styles={customStyles}
             />
             <Select 
@@ -122,11 +136,12 @@ const SelectFilter = ({jobs, handleSelected}) => {
             styles={customStyles}
             />
             <Select 
-            getOptionLabel={option => option.label} 
-            options={options} 
+            getOptionLabel={option => option?.title} 
+            options={optionsType} 
             instanceId="Erfahrungslevel" 
             placeholder="Erfahrungslevel"
             components={{ IndicatorSeparator: () => null }}
+            onChange={(val) => handleSelected({title: val?.title, type: 'type'})}
             styles={customStyles}
             />
         </SelectSection>

@@ -72,6 +72,10 @@ export default function Home({jobs}) {
       const filteredType = jobs.filter(j => j.fields.type.fields?.title === value.title);
       setFilteredJobs(filteredType);
     }
+    if (value?.department == 'department') {
+      const filteredType = jobs.filter(j => j.fields.department.fields?.title === value.title);
+      setFilteredJobs(filteredType);
+    }
   };
 
   return (
