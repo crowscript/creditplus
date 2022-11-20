@@ -38,7 +38,8 @@
     --secondary: #004B44;
     --primary-600-base: #1AAEB7;
     --color-292929: #292929;
-    --primary-600-base-rgba-50: rgba(26, 174, 183, .5);
+    --primary-300-base-rgba-50: rgba(88, 222, 230, .5);
+    --color-black-rgba-16: rgba(0, 0, 0, .16);
     
     /* Font/text values */
     --font-family-gotham: Gotham;
@@ -72,6 +73,7 @@
     --character-spacing--0-36: -0.36px;
     --character-spacing--1-8: -1.8px;
     --line-spacing-10: .625rem;
+    --line-spacing-12: .75rem;
     --line-spacing-18: 1.125rem;
     --line-spacing-20: 1.25rem;
     --line-spacing-24: 1.5rem;

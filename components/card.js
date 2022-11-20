@@ -28,7 +28,7 @@ const StyledLink = styled(Link)`
     &:hover,
     &:focus {
         outline: 0;
-        box-shadow: 0 0 0 .25rem var(--primary-600-base-rgba-50);
+        box-shadow: 0 0 0 .25rem var(--primary-300-base-rgba-50);
     }
 `;
 

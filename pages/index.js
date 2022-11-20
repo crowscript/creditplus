@@ -1,7 +1,8 @@
+import { createClient } from 'contentful';
 import styled from "styled-components";
+import { Container, Container930, ContainerNarrow, DivFull, ScreenSize, ListUnstyled } from '../components/styles/Global.styled';
 import Card from '../components/card';
-import { createClient } from 'contentful'
-import { Container, ContainerNarrow, DivFull, ScreenSize, ListUnstyled } from '../components/styles/Global.styled';
+import SelectFilter from '../components/selectfilter';
 
 export async function getStaticProps() {
 
@@ -25,10 +26,12 @@ const HeaderTitle = styled.h2`
   color: var(--secondary);
   color: var(--secondary);
   text-align: center;
+  margin-bottom: var(--line-spacing-24);
 
   @media ${ScreenSize.tablet} { 
     font: var(--font-style-normal) normal var(--font-weight-bold) var(--font-size-48)/68px var(--font-family-gotham);
     letter-spacing: var(--character-spacing--1-44);
+    margin-bottom: var(--line-spacing-30);
   }
 `;
 
@@ -43,11 +46,13 @@ const ParagraphDesc = styled.p`
   letter-spacing: var(--character-spacing--0-28);
   color: var(--primary-600-base);
   text-align: center;
-  margin-bottom: var(--line-spacing-18);
+  margin-bottom: var(--line-spacing-12);
 
   @media ${ScreenSize.tablet} {
     font: var(--font-style-normal) normal var(--font-weight-medium) var(--font-size-16)/var(--line-spacing-24) var(--font-family-gotham);
     letter-spacing: var(--character-spacing--0-32);
+    // margin-bottom: var(--line-spacing-18); In design, line-height is not correct
+    margin-bottom: 0;
   }  
 `;
 
@@ -68,14 +73,15 @@ export default function Home({jobs}) {
             <ParagraphDesc>
               {jobsLength} offene Stellen bei Creditplus 
             </ParagraphDesc>
-    
             <HeaderTitle>
               Hier beginnt deine Zukunft
             </HeaderTitle>
           </ContainerNarrow>
+          <Container930>
+            <SelectFilter />
+          </Container930>
         </Container>
       </HeaderCareer>  
-
       <ResultsSection>
         <Container>
           <ContainerNarrow>

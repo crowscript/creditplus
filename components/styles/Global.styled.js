@@ -7,6 +7,12 @@ export const Container = styled.div`
     padding: 0 1rem;
 `;
 
+export const Container930 = styled.div`
+    width: 100%;
+    max-width: 930px;
+    margin: 0 auto;
+`;
+
 export const ContainerNarrow = styled.div`
     width: 100%;
     max-width: 824px;
