@@ -66,14 +66,50 @@ export default function Home({jobs}) {
   // console.log(jobs);
   const jobsLength = jobs.length ?? 0;
   const [filterJobs, setFilteredJobs] = useState(jobs);
+  const [city, setCity] = useState('')
+  const [type, setType] = useState('')
+  const [department, setDepartment] = useState('')
 
   const handleSelected = value => {
+    if (value?.type == 'city') {
+      const filteredCity = jobs.filter(j => {
+        if (department && !type) {
+          return j.fields.department.fields?.title === department && j.fields.locations.find(l => l.fields.city === value.city)
+        }
+        if (department && type) {
+          return j.fields.department.fields?.title === department && j.fields.type.fields?.title === type && j.fields.locations.find(l => l.fields.city === value.city)
+        }
+        return type ? j.fields.type.fields?.title === type && j.fields.locations.find(l => l.fields.city === value.city) : 
+        j.fields.locations.find(l => l.fields.city === value.city)
+      })
+      setCity(value.city)
+      setFilteredJobs(filteredCity)
+    }
     if (value?.type == 'type') {
-      const filteredType = jobs.filter(j => j.fields.type.fields?.title === value.title);
+      const filteredType = jobs.filter(j => {
+        if (department && !city) {
+          return j.fields.department.fields?.title === department && j.fields.type.fields?.title === value.title
+        }
+        if (department && city) {
+          console.log('dep and city')
+          return j.fields.department.fields?.title === department && j.fields.type.fields?.title === value.title && j.fields.locations.find(l => l.fields.city === city)
+        }
+        return city ? j.fields.type.fields?.title === value.title && j.fields.locations.find(l => l.fields.city === city) :  j.fields.type.fields?.title === value.title
+      })
+      setType(value.title)
       setFilteredJobs(filteredType);
     }
-    if (value?.department == 'department') {
-      const filteredType = jobs.filter(j => j.fields.department.fields?.title === value.title);
+    if (value?.type == 'department') {
+      const filteredType = jobs.filter(j => {
+        if (city && !type) {
+          return j.fields.locations.find(l => l.fields.city === city) && j.fields.department.fields?.title === value.title
+        }
+        if (city && type) {
+          return j.fields.department.fields?.title === value.title && j.fields.type.fields?.title === type && j.fields.locations.find(l => l.fields.city === city)
+        }
+        return type ? j.fields.department.fields?.title === value.title && j.fields.type.fields?.title === type : j.fields.department.fields?.title === value.title
+      });
+      setDepartment(value.title)
       setFilteredJobs(filteredType);
     }
   };

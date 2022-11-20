@@ -93,18 +93,22 @@ const SelectFilter = ({jobs, handleSelected}) => {
 
   const [optionsType, setOptionsType] = useState([]);
   const [optionsDepartment, setOptionsDepartment]= useState([]);
+  const [optionsLocation, setOptionsLocation]= useState([]);
 
   useEffect(() => {
     const type = jobs.map(j => j.fields?.type);
     const department = jobs.map(j => j.fields?.department);
-    // const department = jobs.map(j => {
-    //   if (j.fields.department) {
-    //     return j.fields.department.find(l => l.fields.title)
-    //   }
-    //   return
-    // });
+    const locations = jobs.map(j => {
+      if (j.fields.locations) {
+        return j.fields.locations.find(l => l.fields.city)
+      }
+      return
+    });
 
-    // console.log(department);
+    if (locations) {
+      const filteredLoc = Array.from(new Set(locations.map(item => JSON.stringify({city: item.fields.city, value: item.fields.city})))).map(JSON.parse);
+      setOptionsLocation(filteredLoc)
+    }
     if (type) {
       const filteredType = Array.from(new Set(type.map(item => JSON.stringify({title: item.fields.title, value: item.fields.title})))).map(JSON.parse);
       setOptionsType(filteredType);
@@ -119,20 +123,21 @@ const SelectFilter = ({jobs, handleSelected}) => {
         <SelectSection>
             <Select 
             // menuIsOpen={true}
-            getOptionLabel={option => option.title} 
+            getOptionLabel={option => option?.title} 
             options={optionsDepartment} 
             instanceId="Bereich" 
             placeholder="Bereich"
             components={{ IndicatorSeparator: () => null }}
-            onChange={(val) => handleSelected({title: val?.title, department: 'department'})}
+            onChange={(val) => handleSelected({title: val?.title, type: 'department'})}
             styles={customStyles}
             />
             <Select 
-            getOptionLabel={option => option.label} 
-            options={options} 
+            getOptionLabel={option => option?.city}
+            options={optionsLocation} 
             instanceId="Stadt" 
             placeholder="Stadt"
             components={{ IndicatorSeparator: () => null }}
+            onChange={(val) => handleSelected({city: val.city, type: 'city'})}
             styles={customStyles}
             />
             <Select 
