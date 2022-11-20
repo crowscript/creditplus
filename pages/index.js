@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Container, Container930, ContainerNarrow, DivFull, ScreenSize, ListUnstyled } from '../components/styles/Global.styled';
 import Card from '../components/card';
 import SelectFilter from '../components/selectfilter';
+import { useEffect, useState } from 'react';
 
 export async function getStaticProps() {
 
@@ -64,6 +65,14 @@ const ResultsSection = styled.div`
 export default function Home({jobs}) {
   // console.log(jobs);
   const jobsLength = jobs.length ?? 0;
+  const [filterJobs, setFilteredJobs] = useState(jobs);
+
+  const handleSelected = value => {
+    if (value?.type == 'type') {
+      const filteredType = jobs.filter(j => j.fields.type.fields?.title === value.title);
+      setFilteredJobs(filteredType);
+    }
+  };
 
   return (
     <DivFull> 
@@ -78,7 +87,7 @@ export default function Home({jobs}) {
             </HeaderTitle>
           </ContainerNarrow>
           <Container930>
-            <SelectFilter />
+            <SelectFilter jobs={jobs} handleSelected={handleSelected} />
           </Container930>
         </Container>
       </HeaderCareer>  
@@ -86,7 +95,7 @@ export default function Home({jobs}) {
         <Container>
           <ContainerNarrow>
             <ListUnstyled>
-              {jobs.map(job => (
+              {filterJobs.map(job => (
                   <Card key={job.sys.id} job={job} />
               ))}
             </ListUnstyled>

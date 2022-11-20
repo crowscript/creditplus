@@ -1,12 +1,13 @@
 import styled from "styled-components";
 import Select from 'react-select';
 import { ScreenSize } from '../components/styles/Global.styled';
+import { useEffect, useState } from "react";
 
 const options = [
-    { value: 'chocolate', label: 'Chocolate' },
-    { value: 'strawberry', label: 'Strawberry' },
-    { value: 'vanilla', label: 'Vanilla' }
-  ]
+  { value: 'chocolate', label: 'Chocolate' },
+  { value: 'strawberry', label: 'Strawberry' },
+  { value: 'vanilla', label: 'Vanilla' }
+]
   
 const customStyles = {
     control: (baseStyles, state) => ({
@@ -88,16 +89,28 @@ const customStyles = {
   }
 `;
 
-const SelectFilter = () => {
+const SelectFilter = ({jobs, handleSelected}) => {
+
+  const [optionsType, setOptionsType] = useState([]);
+
+  useEffect(() => {
+    const type = jobs.map(j => j.fields?.type);
+    if (type) {
+      const filteredType = Array.from(new Set(type.map(item => JSON.stringify({title: item.fields.title, value: item.fields.title})))).map(JSON.parse);
+      setOptionsType(filteredType);
+    }
+  },[]);
+
     return (
         <SelectSection>
             <Select 
             // menuIsOpen={true}
-            getOptionLabel={option => option.label} 
-            options={options} 
+            getOptionLabel={option => option?.title} 
+            options={optionsType} 
             instanceId="Bereich" 
             placeholder="Bereich"
             components={{ IndicatorSeparator: () => null }}
+            onChange={(val) => handleSelected({title: val?.title, type: 'type'})}
             styles={customStyles}
             />
             <Select 
