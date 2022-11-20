@@ -7,12 +7,11 @@ const getCurrentYear = () => {
 
 const FooterStyled = styled.footer`
     display: flex;
-    flex: 1;
     justify-content: center;
     align-items: center;
     text-align: center;
     padding: 1rem 0;
-    margin-top: 4rem;
+    margin-top: auto;
     background-color: var(--gray-100-–-base-bg);
     border-top: 1px solid var(--gray-200);
 `;
