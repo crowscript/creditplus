@@ -6,7 +6,7 @@ const CardList = styled.li`
     margin-bottom: var(--line-spacing-24);
 `;
 
-const Link = ({ className, children }) => (
+export const Link = ({ className, children }) => (
     <a href="#" className={className}>
       {children}
     </a>

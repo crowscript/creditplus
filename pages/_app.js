@@ -1,7 +1,7 @@
 import '../styles/root.css';
 import '../styles/fonts.css';
-import '../styles/normalize.css';
-import '../styles/globals.css';
+import NormalizeStyles from '../components/styles/Normalize.styled'
+import GlobalStyles from '../components/styles/Base.styled'
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import Layout from '../components/Layout';
 
@@ -20,6 +20,8 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <ThemeProvider theme={theme}>
+      <NormalizeStyles />
+      <GlobalStyles />
       <Layout>
         <Component {...pageProps} />
       </Layout>

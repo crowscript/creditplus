@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Container, Container930, ContainerNarrow, DivFull, ScreenSize, ListUnstyled } from '../components/styles/Global.styled';
 import Card from '../components/card';
 import SelectFilter from '../components/selectfilter';
+import Pagination from '../components/pagination';
 import { useEffect, useState } from 'react';
 
 export async function getStaticProps() {
@@ -142,6 +143,11 @@ export default function Home({jobs}) {
           </ContainerNarrow>
         </Container>
       </ResultsSection>
+      <Container>
+        <ContainerNarrow>
+          <Pagination />
+        </ContainerNarrow>
+      </Container>
     </DivFull>
   )
 }

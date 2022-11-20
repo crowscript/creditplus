@@ -8,6 +8,28 @@ const ArrowIcon = () => {
     );
   }
 
+  const ArrowIconLeft = () => {
+    return (
+        <svg version="1.1" id="ArrowIconLeft" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+            viewBox="0 0 1792 1792">
+            <path fill="#838383" d="M259.9,983.3c-23.6-23.2-35.9-55.6-33.6-88.6c-2.4-31.9,10-63,33.6-84.6l546.3-548.3c45.4-45.4,119-45.4,164.4,0
+            s45.4,119,0,164.4L616.3,780.5h833.6c63.8-0.4,115.8,51,116.1,114.8c0,0.2,0,0.4,0,0.7c-0.4,64-52.1,115.8-116.1,116.1H616.3
+            l354.4,353.7c45.4,45.4,45.4,119,0,164.4s-119,45.4-164.4,0l0,0L259.9,983.3z"/>
+        </svg>
+    );
+  }
+
+  const ArrowIconRight = () => {
+    return (
+        <svg version="1.1" id="ArrowIconRight" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+            viewBox="0 0 1792 1792">
+            <path fill="#838383" d="M1532.1,808.7c23.6,23.2,35.9,55.6,33.6,88.6c2.4,31.9-10,63-33.6,84.6l-546.3,548.3c-45.4,45.4-119,45.4-164.4,0
+            c-45.4-45.4-45.4-119,0-164.4l354.4-354.4H342.1c-63.8,0.4-115.8-51-116.1-114.8c0-0.2,0-0.4,0-0.7c0.4-64,52.1-115.8,116.1-116.1
+            h833.6L821.4,426.2c-45.4-45.4-45.4-119,0-164.4c45.4-45.4,119-45.4,164.4,0l0,0L1532.1,808.7z"/>
+        </svg>
+    );
+  }
+
   const ClockIcon = () => {
     return (
         <svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg">
@@ -32,4 +54,4 @@ const ArrowIcon = () => {
     );
   }
    
-export { ArrowIcon, LocationIcon, ClockIcon };
+export { ArrowIcon, ArrowIconLeft, ArrowIconRight, LocationIcon, ClockIcon };
